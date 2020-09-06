@@ -1,0 +1,138 @@
+[bars]
+l0 = " "
+l1 = "▁"
+l2 = "▂"
+l3 = "▃"
+l4 = "▄"
+l5 = "▅"
+l6 = "▆"
+l7 = "▇"
+l8 = "█"
+
+[bar/dummy]
+bottom = false
+width = 100%
+height = 4%
+background = #00000000
+foreground = #00ffffff
+
+modules-right = dummy
+font-0 = fixed
+
+[module/dummy]
+type = custom/text
+content = Test
+
+[bar/custombar]
+bottom = false
+
+separator = " | "
+
+font-0 = "Inconsolata:size=11:style-Regular;0"
+font-1 = "Tamsyn:style=Regular;0"
+font-2 = "Tamsyn:style=Regular;0"
+font-3 = "Tamsyn:style=Regular;0"
+
+override-redirect = true
+wm-restack = i3
+
+width = 90%
+height = 4%
+offset-x = 5%
+offset-y = 10
+
+padding-right = 2
+padding-left = 2
+
+background = #ff000000
+foreground = #ffffffff
+radius = 10.0
+
+modules-left = i3
+modules-center = date
+modules-right = cpu mem bat
+
+[module/i3]
+type = internal/i3
+
+label-focused-foreground = #ffffffff
+label-unfocused-foreground = #ff888888
+
+[module/date]
+type = internal/date
+date = %Y-%m-%d
+time = %H:%M
+label = %time%
+label-font = 1
+
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+format = <label> <ramp-load> <ramp-coreload>
+label = CPU
+
+ramp-load-0 = ${bars.l1}
+ramp-load-1 = ${bars.l2}
+ramp-load-2 = ${bars.l3}
+ramp-load-3 = ${bars.l4}
+ramp-load-4 = ${bars.l5}
+ramp-load-5 = ${bars.l6}
+ramp-load-6 = ${bars.l7}
+ramp-load-7 = ${bars.l8}
+
+ramp-coreload-spacing = 0
+ramp-coreload-0 = ${bars.l1} 
+ramp-coreload-1 = ${bars.l2}
+ramp-coreload-2 = ${bars.l3}
+ramp-coreload-3 = ${bars.l4}
+ramp-coreload-4 = ${bars.l5}
+ramp-coreload-5 = ${bars.l6}
+ramp-coreload-6 = ${bars.l7}
+ramp-coreload-7 = ${bars.l8}
+
+[module/mem]
+type = internal/memory
+interval = 0.5
+format = <label> <ramp-used>
+label = RAM
+
+ramp-used-0 = ${bars.l1}
+ramp-used-1 = ${bars.l2}
+ramp-used-2 = ${bars.l3}
+ramp-used-3 = ${bars.l4}
+ramp-used-4 = ${bars.l5}
+ramp-used-5 = ${bars.l6}
+ramp-used-6 = ${bars.l7}
+ramp-used-7 = ${bars.l8}
+
+[module/bat]
+type = internal/battery
+
+full-at = 95
+battery = BAT0
+poll-interval = 10
+time-format = %H:%M
+
+format-charging = <label-charging> <animation-charging>
+format-discharging = <label-discharging> <ramp-capacity>
+format-full = <label-full>
+
+format-charging-foreground = #ff00aa00
+format-discharging-foreground = #ffaaaa00
+format-full-foreground = #ff00ff00
+
+label-charging = (%time% @ %consumption% W)
+label-discharging = (%time% @ %consumption% W)
+label-full = FULL
+
+ramp-capacity-0 = ${bars.l1}
+ramp-capacity-1 = ${bars.l3}
+ramp-capacity-2 = ${bars.l5}
+ramp-capacity-3 = ${bars.l7}
+
+animation-charging-0 = ${bars.l1}
+animation-charging-1 = ${bars.l3}
+animation-charging-2 = ${bars.l5}
+animation-charging-3 = ${bars.l7}
+animation-charging-4 = ${bars.l7}
+animation-charging-framerate = 250
