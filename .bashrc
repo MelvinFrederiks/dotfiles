@@ -42,6 +42,3 @@ clear
 feh --bg-scale $HOME/wp.jpg
 
 neofetch
-
-echo "TODO: "
-cat TODO
