@@ -44,9 +44,9 @@ offset-y = 10
 padding-right = 2
 padding-left = 2
 
-background = #ff000000
 foreground = #ffffffff
-radius = 10.0
+background = #cc043b0a
+radius = 20.0
 
 modules-left = i3
 modules-center = date
