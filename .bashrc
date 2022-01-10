@@ -9,11 +9,15 @@ alias ls='ls --color=auto'
 ESC=$(printf "\e")
 PS1='[$ESC[1m$ESC[32m\u$ESC[39m$ESC[22m $ESC[33m\w$ESC[39m]\$ '
 
+alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
+
+
 backlight(){
 	brightnessctl -q s $1%
 }
 
 alias rm='trash'
+alias cloneterm='quiet alacritty'
 
 quiet(){
 	nohup $1 &> /dev/null &
@@ -28,13 +32,12 @@ function vimtex() {
 	vim $1
 }
 
-alias texc='latexmk -pdf -pvc'
-#quiet latexmk -pdf -pvc $1
+alias texc='latexmk -pdf -pvc -shell-escape'
 
 alias pdf='quiet evince'
-alias browser='quiet waterfox-current'
+alias browser='quiet waterfox-g3'
 
-pidof waterfox-current >/dev/null && echo "waterfox running" || browser
+pidof waterfox-g3 >/dev/null && echo "waterfox running" || browser
 
 clear
 # Setup here
