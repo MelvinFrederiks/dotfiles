@@ -1,3 +1,6 @@
+inoremap jj <ESC>
+let mapleader = "'"
+
 filetype plugin on
 filetype indent on
 
@@ -10,4 +13,9 @@ set shiftwidth=4
 highlight Folded ctermbg=Black ctermfg=Blue
 
 set number
+set nu rnu
 syntax on
+set noswapfile
+set hlsearch
+set ignorecase
+set incsearch
