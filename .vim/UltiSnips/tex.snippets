@@ -1,0 +1,41 @@
+snippet today "Date"
+`date +%F`
+endsnippet
+
+snippet beg "Environment" bA
+\begin{$1}
+	$2
+\end{$1}
+$0
+endsnippet
+
+snippet DF "InlineMath" wA
+$${1}$`!p
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+	snip.rv = ' '
+else:
+	snip.rv = ''
+`$2
+endsnippet
+
+snippet DD "DisplayMath" wA
+\[
+$1
+.\] $0
+endsnippet
+
+snippet ^^ "Exponent" iA
+^{$1}$0
+endsnippet
+
+snippet __ "Subscript" iA
+_{$1}$0
+endsnippet
+
+snippet // "Fraction" iA
+\\frac{$1}{$2}$0
+endsnippet
+
+snippet func "Function"
+\funclong{$1}{$2}{$3}{$4}{$5}$0
+endsnippet
