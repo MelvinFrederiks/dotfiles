@@ -110,7 +110,7 @@ bindsym $mod+a focus parent
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1 term"
 set $ws2 "2 browser"
-set $ws3 "3 discord"
+set $ws3 "3"
 set $ws4 "4 tex"
 set $ws5 "5"
 set $ws6 "6"
@@ -179,7 +179,7 @@ bindsym $mod+r mode "resize"
 
 exec alacritty
 
-assign [class="waterfox-current"] $ws2
+assign [class="waterfox-g3"] $ws2
 
 # Set gaps
 gaps inner 10
