@@ -37,6 +37,7 @@ set incsearch
 let g:Imap_FreezeImap=1
 autocmd Filetype tex setlocal nofoldenable
 let g:tex_flavor='latex'
+let g:tex_math_envs='tikzcd'
 
 set conceallevel=1
 let g:tex_conceal='abdmg'
