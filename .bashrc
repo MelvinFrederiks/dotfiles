@@ -34,7 +34,7 @@ function vimtex() {
 
 alias texc='latexmk -pdf -pvc -shell-escape'
 
-alias pdf='quiet evince'
+alias pdf='quiet sioyek'
 alias browser='quiet waterfox-g3'
 
 pidof waterfox-g3 >/dev/null && echo "waterfox running" || browser
